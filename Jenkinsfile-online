@@ -92,7 +92,7 @@ pipeline {
           }
           steps {
               container ('maven') {
-                input(id: 'release-image-with-tag', message: 'release image with tag?',submitter: 'project-admin,project-admin1')
+                input(id: 'release-image-with-tag', message: 'release image with tag?',submitter: 'project-admin,project-regular')
                   withCredentials([usernamePassword(credentialsId: "$GITHUB_CREDENTIAL_ID", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                     sh 'git config --global user.email "kubesphere@yunify.com" '
                     sh 'git config --global user.name "kubesphere" '
